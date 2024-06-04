@@ -1,0 +1,51 @@
+<!-- clientes/templates/clientes/home.html -->
+
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+<h2>Lista de Clientes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>{{ cliente.endereco }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Lista de Clientes Premium</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Benefícios</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente_premium in clientes_premium %}
+        <tr>
+            <td>{{ cliente_premium.nome }}</td>
+            <td>{{ cliente_premium.email }}</td>
+            <td>{{ cliente_premium.telefone }}</td>
+            <td>{{ cliente_premium.endereco }}</td>
+            <td>{{ cliente_premium.beneficios }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
