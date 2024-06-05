@@ -1,0 +1,16 @@
+<!-- clientes/templates/clientes/cadastrar_cliente.html -->
+
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Cadastrar Cliente</h2>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- python manage.py runserver -->
